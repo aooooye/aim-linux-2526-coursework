@@ -32,16 +32,16 @@
 #   └── data/
 # 提示：先进入 generated 目录，然后使用创建子目录，创建完成后回到上级目录
 
-# 请在下方写下你的命令（删除下面的 echo 语句并替换为你的命令，下面每一题都同理）
-echo "任务 1: 请完成创建目录结构的命令"
+mkdir -p ./generated/workspace/scripts
+mkdir -p ./generated/workspace/data
 
 
 # 任务 2: 创建文件
 # 要求：在 ./generated/workspace/scripts/ 目录下创建两个空文件：
 #       hello.sh 和 utils.sh
 
-# 请在下方写下你的命令
-echo "任务 2: 请完成创建文件的命令"
+touch ./generated/workspace/scripts/hello.sh
+touch ./generated/workspace/scripts/utils.sh
 
 
 # 任务 3: 创建文件内容
@@ -50,23 +50,19 @@ echo "任务 2: 请完成创建文件的命令"
 #       echo "Hello, Linux!"
 # 提示：可以自行上网搜索如何一次性写入包含多行的文件
 
-# 请在下方写下你的命令
-echo "任务 3: 请完成创建文件内容的命令"
-
+echo -e "#!/bin/bash\necho \"Hello, Linux!\"" > ./generated/workspace/scripts/hello.sh
 
 # 任务 4: 删除文件
 # 要求：删除 ./generated/workspace/scripts/utils.sh 文件
 
-# 请在下方写下你的命令
-echo "任务 4: 请完成删除文件的命令"
+rm ./generated/workspace/scripts/utils.sh
 
 
 # 任务 5: 使用 rm 删除目录
 # 要求：删除 ./generated/workspace/data/ 目录
 
-# 请在下方写下你的命令
-echo "任务 5: 请完成删除目录的命令"
 
+rm -r ./generated/workspace/data/
 
 # 任务 6: 使用 cat 和 grep 创建和搜索文件
 # 要求：
@@ -77,17 +73,10 @@ echo "任务 5: 请完成删除目录的命令"
 #   2. 使用 grep 搜索包含 "Linux" 的行，并将结果保存到 result.txt 文件中
 # 提示：可以自行上网搜索如何一次性写入包含多行的文件
 
-# 请在下方写下你的命令
-echo "任务 6: 请完成创建文件和搜索的命令"
-
+touch ./generated/workspace/info.txt
+echo -e "Linux is a powerful operating system.\nBash scripting is fun and useful.\nCommand line tools are essential for developers." > ./generated/workspace/info.txt
+grep "Linux" ./generated/workspace/info.txt > ./generated/workspace/result.txt
 
 # ============================================================================
 # 脚本结束
 # ============================================================================
-echo ""
-echo "所有任务执行完毕！"
-echo "请运行 bash ./test.sh 来测试你的脚本是否正确。"
-echo ""
-echo "⚠️ 重要提醒："
-echo "测试通过后，请不要修改任何文件，直接 commit 并 push 到 GitHub。"
-echo "如果 CI 检测到 hash.txt 不匹配，请重新运行 test.sh 并直接提交。"
